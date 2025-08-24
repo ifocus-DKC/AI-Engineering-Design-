@@ -1,0 +1,173 @@
+!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kruchetz.com - แพลตฟอร์มการเรียนรู้เชิงโต้ตอบ v0.1</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+    <header class="py-16 md:py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-grid-gray-800/20 [mask-image:linear-gradient(to_bottom,white_20%,transparent_100%)]"></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="fade-in-up">
+                <div class="inline-flex items-center border border-gray-700 bg-gray-800/50 rounded-full px-4 py-2 mb-6">
+                    <span class="bg-indigo-500 text-white text-xs font-bold px-2 py-1 rounded-full mr-3">v0.1</span>
+                    <span class="text-sm font-medium text-gray-300">แพลตฟอร์มการเรียนรู้เชิงโต้ตอบ โดย ครูวิระเชษฐ์ ทวีทรัพย์</span>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-4">
+                    <span class="gradient-text">AI Engineering Design</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                    แพลตฟอร์มจัดการเรียนรู้และแหล่งข้อมูล สำหรับการออกแบบเชิงวิศวกรรมด้วยปัญญาประดิษฐ์
+                </p>
+                
+                <div class="glass-card rounded-2xl p-4 max-w-2xl mx-auto">
+                    <div class="flex items-center justify-center space-x-3">
+                        <i class="fas fa-globe text-2xl text-indigo-400"></i>
+                        <span class="font-semibold text-lg">โดเมนหลัก:</span>
+                        <code class="text-lg md:text-xl font-mono text-indigo-300 bg-gray-900/50 px-3 py-1 rounded-lg">kruchetz.com</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="bg-gray-900/70 backdrop-blur-md shadow-lg sticky top-0 z-40 border-b border-gray-700">
+        <div class="container mx-auto px-6">
+            <div class="flex space-x-4 sm:space-x-8 overflow-x-auto" id="nav-menu">
+                <button onclick="showSection('link-manager', this)" class="nav-btn py-4 px-2 sm:px-3 border-b-2 border-transparent text-gray-400 hover:text-white font-medium whitespace-nowrap transition-all duration-300 nav-active">
+                    <i class="fas fa-link mr-2"></i>จัดการลิงก์
+                </button>
+                <button onclick="showSection('dashboard', this)" class="nav-btn py-4 px-2 sm:px-3 border-b-2 border-transparent text-gray-400 hover:text-white font-medium whitespace-nowrap transition-all duration-300">
+                    <i class="fas fa-tachometer-alt mr-2"></i>ภาพรวม
+                </button>
+                <button onclick="showSection('resources', this)" class="nav-btn py-4 px-2 sm:px-3 border-b-2 border-transparent text-gray-400 hover:text-white font-medium whitespace-nowrap transition-all duration-300">
+                    <i class="fas fa-book mr-2"></i>แหล่งข้อมูล
+                </button>
+                <button onclick="showSection('about', this)" class="nav-btn py-4 px-2 sm:px-3 border-b-2 border-transparent text-gray-400 hover:text-white font-medium whitespace-nowrap transition-all duration-300">
+                    <i class="fas fa-info-circle mr-2"></i>เกี่ยวกับ
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-6 py-8">
+        <div id="link-manager" class="section">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2 glass-card rounded-2xl p-6 md:p-8">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-6 flex items-center"><i class="fas fa-plus-circle mr-3 gradient-text"></i>สร้างลิงก์ใหม่</h2>
+                    <div class="space-y-6">
+                        <div>
+                            <label for="linkName" class="block text-sm font-semibold text-gray-300 mb-2">ชื่อ/หัวข้อของลิงก์ (ภาษาไทยหรืออังกฤษ)</label>
+                            <input type="text" id="linkName" placeholder="เช่น: บทที่ 1, เครื่องมือ AI, แบบทดสอบ" class="w-full px-4 py-3 input-glass rounded-xl focus:outline-none transition-all duration-300">
+                        </div>
+                        <div>
+                            <label for="targetUrl" class="block text-sm font-semibold text-gray-300 mb-2">URL ปลายทาง (จาก Google Drive)</label>
+                            <input type="url" id="targetUrl" placeholder="วางลิงก์ Google Drive ที่นี่" class="w-full px-4 py-3 input-glass rounded-xl focus:outline-none transition-all duration-300">
+                        </div>
+                        <div>
+                            <label for="linkDescription" class="block text-sm font-semibold text-gray-300 mb-2">คำอธิบาย</label>
+                            <textarea id="linkDescription" placeholder="คำอธิบายสั้นๆ เกี่ยวกับลิงก์นี้" class="w-full px-4 py-3 input-glass rounded-xl focus:outline-none transition-all duration-300 h-24 resize-none"></textarea>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="linkCategory" class="block text-sm font-semibold text-gray-300 mb-2">หมวดหมู่</label>
+                                <select id="linkCategory" class="w-full px-4 py-3 input-glass rounded-xl focus:outline-none transition-all duration-300">
+                                    <option value="lessons">บทเรียน</option>
+                                    <option value="ai-tools">เครื่องมือ AI</option>
+                                    <option value="assessment">แบบทดสอบ</option>
+                                    <option value="resources">แหล่งข้อมูล</option>
+                                    <option value="other">อื่นๆ</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="linkStatus" class="block text-sm font-semibold text-gray-300 mb-2">สถานะ</label>
+                                <select id="linkStatus" class="w-full px-4 py-3 input-glass rounded-xl focus:outline-none transition-all duration-300">
+                                    <option value="active">ใช้งาน</option>
+                                    <option value="inactive">ไม่ใช้งาน</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button onclick="createNewLink()" class="w-full btn-primary text-white py-3 px-6 rounded-xl font-semibold text-lg">
+                            <i class="fas fa-magic mr-2"></i> สร้างลิงก์
+                        </button>
+                    </div>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="glass-card rounded-2xl p-6">
+                        <h3 class="text-xl font-bold text-white mb-4">ตัวอย่างลิงก์</h3>
+                        <div class="bg-gray-900/50 rounded-xl p-4 border border-dashed border-gray-600">
+                            <div class="font-mono text-sm text-gray-400 mb-2">ลิงก์ที่จะถูกสร้าง:</div>
+                            <code id="previewUrl" class="text-indigo-300 break-all">
+                                kruchetz.com/to/[ชื่อลิงก์]
+                            </code>
+                        </div>
+                        <div class="mt-4 text-xs text-gray-400">
+                            <i class="fas fa-info-circle mr-1"></i> ชื่อลิงก์จะถูกแปลงเป็นภาษาอังกฤษอัตโนมัติและไม่มีสัญลักษณ์พิเศษ
+                        </div>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6">
+                        <h3 class="text-xl font-bold text-white mb-4">สถิติโดยรวม</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center text-gray-300"><span><i class="fas fa-link mr-2 text-indigo-400"></i>ลิงก์ทั้งหมด</span> <span id="statsTotal" class="font-bold text-white">0</span></div>
+                            <div class="flex justify-between items-center text-gray-300"><span><i class="fas fa-check-circle mr-2 text-green-400"></i>กำลังใช้งาน</span> <span id="statsActive" class="font-bold text-white">0</span></div>
+                            <div class="flex justify-between items-center text-gray-300"><span><i class="fas fa-mouse-pointer mr-2 text-purple-400"></i>จำนวนคลิกทั้งหมด</span> <span id="statsClicks" class="font-bold text-white">0</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 glass-card rounded-2xl p-6 md:p-8">
+                <div class="flex flex-col sm:flex-row items-center justify-between mb-6 gap-4">
+                    <h3 class="text-2xl font-bold text-white">รายการลิงก์ทั้งหมด</h3>
+                    <div class="flex items-center space-x-3">
+                        <select id="filterCategory" onchange="renderLinksList()" class="px-4 py-2 input-glass rounded-lg text-sm">
+                            <option value="all">ทุกหมวดหมู่</option>
+                            <option value="lessons">บทเรียน</option>
+                            <option value="ai-tools">เครื่องมือ AI</option>
+                            <option value="assessment">แบบทดสอบ</option>
+                            <option value="resources">แหล่งข้อมูล</option>
+                            <option value="other">อื่นๆ</option>
+                        </select>
+                        <button onclick="initializeLinksDatabase()" class="btn-secondary text-white px-4 py-2 rounded-lg text-sm font-medium">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="space-y-4" id="linksList">
+                    </div>
+            </div>
+        </div>
+
+        <div id="dashboard" class="section hidden">
+            <div class="text-center py-10">
+                <i class="fas fa-tachometer-alt text-6xl gradient-text mb-6"></i>
+                <h2 class="text-4xl font-bold">ภาพรวมระบบ</h2>
+                <p class="text-xl text-gray-400 mt-2">ส่วนนี้กำลังอยู่ในการพัฒนา</p>
+            </div>
+        </div>
+        <div id="resources" class="section hidden">
+            <div class="text-center py-10">
+                <i class="fas fa-book text-6xl gradient-text mb-6"></i>
+                <h2 class="text-4xl font-bold">แหล่งข้อมูล</h2>
+                <p class="text-xl text-gray-400 mt-2">ส่วนนี้กำลังอยู่ในการพัฒนา</p>
+            </div>
+        </div>
+        <div id="about" class="section hidden">
+            <div class="glass-card rounded-2xl p-8 max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-6 gradient-text">เกี่ยวกับแพลตฟอร์ม</h2>
+                <div class="text-center mb-8">
+                    <img src="https://placehold.co/150x150/1f2937/4f46e5?text=ครูวิระเชษฐ์" alt="ครูวิระเชษฐ์ ทวีทรัพย์ Profile" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-indigo-500">
+                    <h3 class="text-2xl font-semibold">คุณครูวิระเชษฐ์ ทวีทรัพย์</h3>
+                    <p class="text-gray-400">ครูชำนาญการพิเศษ, กลุ่มสาระการเรียนรู้ศิลปะ</p>
+                    <p class="text-gray-400">โรงเรียนเซกา สพม.บึงกาฬ</p>
+                </div>
+                <p class="text-gray-300 leading-relaxed text-center">

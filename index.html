@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI-Powered Personal Learning Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header class="py-16 md:py-24 relative overflow-hidden">
+      <div
+        class="absolute inset-0 bg-grid-gray-800/20 [mask-image:linear-gradient(to_bottom,white_20%,transparent_100%)]"
+      ></div>
+      <div class="container mx-auto px-6 text-center relative z-10">
+        <div class="fade-in-up">
+          <div
+            class="inline-flex items-center border border-gray-700 bg-gray-800/50 rounded-full px-4 py-2 mb-6"
+          >
+            <span
+              class="bg-indigo-500 text-white text-xs font-bold px-2 py-1 rounded-full mr-3"
+              >v0.1</span
+            >
+            <span class="text-sm font-medium text-gray-300"
+              >แพลตฟอร์มการเรียนรู้เชิงโต้ตอบ โดย ครูวิระเชษฐ์
+              ทวีทรัพย์</span
+            >
+          </div>
+
+          <h1 class="text-5xl md:text-7xl font-extrabold mb-4">
+            <span class="gradient-text">AI Engineering Design</span>
+          </h1>
+          <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            แพลตฟอร์มจัดการเรียนรู้และแหล่งข้อมูล
+            สำหรับการออกแบบเชิงวิศวกรรมด้วยปัญญาประดิษฐ์
+          </p>
+
+          <div class="glass-card rounded-2xl p-4 max-w-2xl mx-auto">
+            <div class="flex items-center justify-center space-x-3">
+              <i class="fas fa-globe text-2xl text-indigo-400"></i>
+              <span class="font-semibold text-lg">โดเมนหลัก:</span>
+              <code
+                class="text-lg md:text-xl font-mono text-indigo-300 bg-gray-900/50 px-3 py-1 rounded-lg"
+                >kruchetz.com</code
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav
+      class="bg-gray-900/70 backdrop-blur-md shadow-lg sticky top-0 z-40 border-b border-gray-700"
+    >
+      <div class="container mx-auto px-6">
+        <div class="flex space-x-4 sm:space-x-8 overflow-x-auto" id="nav-menu">
+          <button
+            onclick="showSection('link-manager', this)"
+            class="nav-btn py-4 px-2 sm:px-3 border-b-2 border-transparent text-gray-400 hover:text-white font-medium whitespace-nowrap transition-all duration-300"
+          >
+            <i class="fas fa-link mr-2"></i>จัดการลิงก์
+          </button>
+          <button
+            onclick="showSection('lesson-plan', this)"
+            class="nav-btn py-4 px-2 sm:px-3 border-b-2 border-transparent text-gray-400 hover:text-white font-medium whitespace-nowrap transition-all duration-300"
+          >
+            <i class="fas fa-chalkboard-teacher mr-2"></i>แผนการเรียนรู้
+          </button>
+          <button
+            onclick="showSection('dashboard', this)"
+            class="nav-btn py-4 px-2 sm:px-3 border-b-2 border-transparent text-gray-400 hover:text-white font-medium whitespace-nowrap transition-all duration-300"
+          >
+            <i class="fas fa-tachometer-alt mr-2"></i>ภาพรวม
+          </button>
+          <button
+            onclick="showSection('resources', this)"
+            class="nav-btn py-4 px-2 sm:px-3 border-b-2 border-transparent text-gray-400 hover:text-white font-medium whitespace-nowrap transition-all duration-300"
+          >
+            <i class="fas fa-book mr-2"></i>แหล่งข้อมูล
+          </button>
+          <button
+            onclick="showSection('about', this)"
+            class="nav-btn py-4 px-2 sm:px-3 border-b-2 border-transparent text-gray-400 hover:text-white font-medium whitespace-nowrap transition-all duration-300"
+          >
+            <i class="fas fa-info-circle mr-2"></i>เกี่ยวกับ
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container mx-auto px-6 py-8">
+      <div id="link-manager" class="section">
+         <div class="grid lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 glass-card rounded-2xl p-6 md:p-8 flex flex-col items-center justify-center text-center">
+                <i class="fab fa-google-drive text-6xl gradient-text mb-6"></i>
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">จัดการลิงก์ด้วย Google Workspace</h2>
+                <p class="text-gray-400 mb-6 max-w-md">
+                    กระบวนการสร้างและจัดการลิงก์ทั้งหมดจะทำผ่าน Google Form และข้อมูลจะถูกจัดเก็บใน Google Sheet โดยอัตโนมัติเพื่อความสะดวกและยืดหยุ่น
+                </p>
+                <button onclick="openGoogleForm()" class="w-full max-w-xs btn-primary text-white py-3 px-6 rounded-xl font-semibold text-lg">
+                    <i class="fas fa-plus-circle mr-2"></i> สร้างลิงก์ใหม่ผ่าน Google Form
+                </button>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6">
+                <h3 class="text-xl font-bold text-white mb-4">ฐานข้อมูลลิงก์</h3>
+                 <div class="space-y-3">
+                    <div class="flex justify-between items-center text-gray-300">
+                        <span><i class="fas fa-database mr-2 text-indigo-400"></i>แหล่งข้อมูล</span> 
+                        <span class="font-bold text-white font-mono text-sm bg-gray-700/50 px-2 py-1 rounded">Google Sheet</span>
+                    </div>
+                    <div class="flex justify-between items-center text-gray-300">
+                        <span><i class="fas fa-check-circle mr-2 text-green-400"></i>สถานะ</span> 
+                        <span class="font-bold text-white">พร้อมเชื่อมต่อ</span>
+                    </div>
+                </div>
+                <button onclick="initializeLinksDatabase()" class="w-full mt-6 btn-secondary text-white py-2 px-4 rounded-xl font-semibold text-base">
+                    <i class="fas fa-sync-alt mr-2"></i> ดึงข้อมูลล่าสุด
+                </button>
+            </div>
+        </div>
+
+        <div class="mt-8 glass-card rounded-2xl p-6 md:p-8" id="link-list-card">
+          <div
+            class="flex flex-col sm:flex-row items-center justify-between mb-6 gap-4"
+          >
+            <h3 class="text-2xl font-bold text-white">รายการลิงก์ทั้งหมด (จาก Google Sheet)</h3>
+            <div class="flex items-center space-x-3">
+              <select
+                id="filterCategory"
+                onchange="renderLinksList()"
+                class="px-4 py-2 input-glass rounded-lg text-sm"
+              >
+                <option value="all">ทุกหมวดหมู่</option>
+                <option value="lessons">บทเรียน</option>
+                <option value="ai-tools">เครื่องมือ AI</option>
+                <option value="assessment">แบบทดสอบ</option>
+                <option value="resources">แหล่งข้อมูล</option>
+                <option value="other">อื่นๆ</option>
+              </select>
+            </div>
+          </div>
+          <div class="space-y-4" id="linksList">
+            <!-- ข้อมูลจาก Google Sheet จะถูกแสดงผลที่นี่ -->
+          </div>
+        </div>
+      </div>
+
+      <div id="lesson-plan" class="section hidden">
+        <div class="glass-card rounded-2xl p-6 md:p-8">
+            <h2 class="text-3xl font-bold text-center mb-2 gradient-text">แผนการจัดการเรียนรู้เชิงโต้ตอบ</h2>
+            <p class="text-center text-gray-400 mb-8">วิชา: การออกแบบเชิงนวัตกรรม: กราฟิกดีไซน์ และ AI</p>
+
+            <div class="space-y-4">
+                <!-- Unit 1 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span class="flex-1 text-left">หน่วยการเรียนรู้ที่ 1: พื้นฐานการออกแบบกราฟิกสู่ยุคดิจิทัล (10 ชั่วโมง)</span>
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </button>
+                    <div class="accordion-panel">
+                        <div class="lesson-item"><span>ชั่วโมงที่ 1: แนะนำรายวิชา และความสำคัญของการออกแบบ</span> <button onclick="openGoogleForm('แนะนำรายวิชา')" class="add-link-btn"><i class="fas fa-plus-circle mr-1"></i> เพิ่มลิงก์</button></div>
+                        <div class="lesson-item"><span>ชั่วโมงที่ 2: องค์ประกอบศิลป์ (Elements of Design)</span> <button onclick="openGoogleForm('องค์ประกอบศิลป์')" class="add-link-btn"><i class="fas fa-plus-circle mr-1"></i> เพิ่มลิงก์</button></div>
+                        <div class="lesson-item"><span>ชั่วโมงที่ 3-4: หลักการจัดองค์ประกอบ (Principles of Design)</span> <button onclick="openGoogleForm('หลักการจัดองค์ประกอบ')" class="add-link-btn"><i class="fas fa-plus-circle mr-1"></i> เพิ่มลิงก์</button></div>
+                        <div class="lesson-item"><span>ชั่วโมงที่ 5-6: Typography และพลังของตัวอักษร</span> <button onclick="openGoogleForm('Typography')" class="add-link-btn"><i class="fas fa-plus-circle mr-1"></i> เพิ่มลิงก์</button></div>
+                        <div class="lesson-item"><span>ชั่วโมงที่ 7-8: จิตวิทยาสี และการสร้าง Color Palette</span> <button onclick="openGoogleForm('จิตวิทยาสี')" class="add-link-btn"><i class="fas fa-plus-circle mr-1"></i> เพิ่มลิงก์</button></div>
+                        <div class="lesson-item"><span>ชั่วโมงที่ 9-10: สรุปหน่วยที่ 1 และวัดผล</span> <button onclick="openGoogleForm('สรุปหน่วยที่ 1')" class="add-link-btn"><i class="fas fa-plus-circle mr-1"></i> เพิ่มลิงก์</button></div>
+                    </div>
+                </div>
+
+                <!-- Unit 2 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span class="flex-1 text-left">หน่วยการเรียนรู้ที่ 2: AI ปฏิวัติโลกการออกแบบ (10 ชั่วโมง)</span>
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </button>
+                    <div class="accordion-panel">
+                        <div class="lesson-item"><span>ชั่วโมงที่ 11-12: AI คืออะไร และมาเกี่ยวกับการออกแบบได้อย่างไร?</span><button onclick="openGoogleForm('AI คืออะไร')" class="add-link-btn"><i class="fas fa-plus-circle mr-1"></i> เพิ่มลิงก์</button></div>
+                        <div class="lesson-item"><span>ชั่วโมงที่ 13-14: ศิลปะการเขียน Prompt: การสั่งงาน AI</span><button onclick="openGoogleForm('ศิลปะการเขียน Prompt')" class="add-link-btn"><i class="fas fa-plus-circle mr-1"></i> เพิ่มลิงก์</button></div>
+                        <div class="lesson-item"><span>ชั่วโมงที่ 15-16: จากจินตนาการสู่ภาพ: ปฏิบัติการสร้างสรรค์ด้วย AI</span><button onclick="openGoogleForm('ปฏิบัติการสร้างสรรค์ด้วย AI')" class="add-link-btn"><i class="fas fa-plus-circle mr-1"></i> เพิ่มลิงก์</button></div>
+                        <div class="lesson-item"><span>ชั่วโมงที่ 17-18: AI กับการออกแบบ UI/UX และจริยธรรม</span><button onclick="openGoogleForm('AI กับ UI/UX และจริยธรรม')" class="add-link-btn"><i class="fas fa-plus-circle mr-1"></i> เพิ่มลิงก์</button></div>
+                        <div class="lesson-item"><span>ชั่วโมงที่ 19-20: สรุปหน่วยที่ 2 และวัดผล</span><button onclick="openGoogleForm('สรุปหน่วยที่ 2')" class="add-link-btn"><i class="fas fa-plus-circle mr-1"></i> เพิ่มลิงก์</button></div>
+                    </div>
+                </div>
+
+                <!-- Unit 3 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span class="flex-1 text-left">หน่วยที่ 3: โครงงานสร้างสรรค์: ผสานพลังมนุษย์และ AI (20 ชั่วโมง)</span>
+                         <i class="fas fa-chevron-down accordion-icon"></i>
+                    </button>
+                    <div class="accordion-panel">
+                        <div class="lesson-item"><span>ชั่วโมงที่ 21-25: ขั้นที่ 1: วางแผนและพัฒนาแนวคิด (Ideation & Planning)</span><button onclick="openGoogleForm('วางแผนและพัฒนาแนวคิด')" class="add-link-btn"><i class="fas fa-plus-circle mr-1"></i> เพิ่มลิงก์</button></div>
+                        <div class="lesson-item"><span>ชั่วโมงที่ 26-33: ขั้นที่ 2: ลงมือสร้างสรรค์ผลงาน (Production)</span><button onclick="openGoogleForm('ลงมือสร้างสรรค์ผลงาน')" class="add-link-btn"><i class="fas fa-plus-circle mr-1"></i> เพิ่มลิงก์</button></div>
+                        <div class="lesson-item"><span>ชั่วโมงที่ 34-36: ขั้นที่ 3: การเตรียมนำเสนอผลงาน (Presentation Prep)</span><button onclick="openGoogleForm('การเตรียมนำเสนอผลงาน')" class="add-link-btn"><i class="fas fa-plus-circle mr-1"></i> เพิ่มลิงก์</button></div>
+                        <div class="lesson-item"><span>ชั่วโมงที่ 37-40: ขั้นที่ 4: นำเสนอผลงานและสรุป (Final Presentation & Reflection)</span><button onclick="openGoogleForm('นำเสนอผลงานและสรุป')" class="add-link-btn"><i class="fas fa-plus-circle mr-1"></i> เพิ่มลิงก์</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div id="dashboard" class="section hidden">
+        <div class="text-center py-10">
+          <i class="fas fa-tachometer-alt text-6xl gradient-text mb-6"></i>
+          <h2 class="text-4xl font-bold">ภาพรวมระบบ</h2>
+          <p class="text-xl text-gray-400 mt-2">ส่วนนี้กำลังอยู่ในการพัฒนา</p>
+        </div>
+      </div>
+      <div id="resources" class="section hidden">
+        <div class="text-center py-10">
+          <i class="fas fa-book text-6xl gradient-text mb-6"></i>
+          <h2 class="text-4xl font-bold">แหล่งข้อมูล</h2>
+          <p class="text-xl text-gray-400 mt-2">ส่วนนี้กำลังอยู่ในการพัฒนา</p>
+        </div>
+      </div>
+      <div id="about" class="section hidden">
+        <div class="glass-card rounded-2xl p-8 max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-6 gradient-text">
+            เกี่ยวกับแพลตฟอร์ม
+          </h2>
+          <div class="text-center mb-8">
+            <img
+              src="https://placehold.co/150x150/1f2937/4f46e5?text=ครูวิระเชษฐ์"
+              alt="ครูวิระเชษฐ์ ทวีทรัพย์ Profile"
+              class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-indigo-500"
+            />
+            <h3 class="text-2xl font-semibold">คุณครูวิระเชษฐ์ ทวีทรัพย์</h3>
+            <p class="text-gray-400">
+              ครูชำนาญการพิเศษ, กลุ่มสาระการเรียนรู้ศิลปะ
+            </p>
+            <p class="text-gray-400">โรงเรียนเซกา สพม.บึงกาฬ</p>
+          </div>
+          <p class="text-gray-300 leading-relaxed text-center">
+            แพลตฟอร์มนี้คือพิมพ์เขียวสำหรับระบบการเรียนรู้แบบ Interactive
+            ที่ขับเคลื่อนด้วย AI
+            ออกแบบมาเพื่อตอบสนองกระบวนการเรียนรู้ของผู้เรียนผ่านสมาร์ทโฟนเป็นหลัก
+            โดยมีโครงสร้างที่ยืดหยุ่น
+            รองรับเนื้อหาหลากหลายสาขาวิชาและสามารถปรับแต่งให้เข้ากับบริบทต่างๆ
+            ได้
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="mt-20 border-t border-gray-800">
+      <div class="container mx-auto px-6 py-8 text-center text-gray-400">
+        <p>© 2025 ครูวิระเชษฐ์ ทวีทรัพย์</p>
+        <p class="text-sm">
+          AI Engineering Design Interactive Learning Platform v0.1
+        </p>
+      </div>
+    </footer>
+
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
